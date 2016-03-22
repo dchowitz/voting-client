@@ -1,3 +1,5 @@
+import getUserId from './userId';
+
 export function setState(state) {
   return {
     type: 'SET_STATE',
@@ -9,7 +11,7 @@ export function vote(entry) {
   return {
     meta: {remote: true},
     type: 'VOTE',
-    entry: entry
+    vote: {voterId: getUserId(), entry: entry}
   };
 }
 

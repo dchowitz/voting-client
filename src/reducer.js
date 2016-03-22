@@ -23,7 +23,7 @@ export default function (state = Map(), action) {
   case 'SET_STATE':
     return setState(state, action.state);
   case 'VOTE':
-    return vote(state, action.entry);
+    return vote(state, action.vote.entry);
   }
   return state;
 }

@@ -70,7 +70,7 @@ describe('reducer', () => {
         tally : {Trainspotting: 1}
       }
     });
-    const action = {type: 'VOTE', entry: 'Trainspotting'};
+    const action = {type: 'VOTE', vote: {voterId: 'voter1', entry: 'Trainspotting'}};
     const nextState = reducer(state, action);
 
     expect(nextState).to.equal(fromJS({
@@ -89,7 +89,7 @@ describe('reducer', () => {
         tally : {Trainspotting: 1}
       }
     });
-    const action = {type: 'VOTE', entry: 'Sunshine'};
+    const action = {type: 'VOTE', vote: {voterId: 'voter1', entry: 'Sunshine'}};
     const nextState = reducer(state, action);
 
     expect(nextState).to.equal(fromJS({
