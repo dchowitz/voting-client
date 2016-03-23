@@ -41,6 +41,20 @@ describe('Results', () => {
     expect(nextInvoked).to.equal(true);
   });
 
+  it('invokes the reset callback when reset button is clicked', () => {
+    let resetInvoked = false;
+    const reset = () => resetInvoked = true;
+    const pair = List.of('Trainspotting', '28 Days Later');
+    const component = renderIntoDocument(
+      <Results pair={pair}
+        tally={Map()}
+        next={()=>{}}
+        reset={reset} />
+    );
+    Simulate.click(ReactDom.findDOMNode(component.refs.reset));
+    expect(resetInvoked).to.equal(true);
+  });
+
   it('renders the winner when there is one', () => {
     const component = renderIntoDocument(
       <Results winner="Trainspotting" pair={List.of('Trainspotting', '28 Days Later')} tally={Map()} />

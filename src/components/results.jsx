@@ -10,6 +10,7 @@ export const Results = React.createClass({
     pair: React.PropTypes.object,
     tally: React.PropTypes.object,
     next: React.PropTypes.func,
+    reset: React.PropTypes.func,
     winner: React.PropTypes.string
   },
   getPair: function () {
@@ -37,6 +38,8 @@ export const Results = React.createClass({
           </div>
           <div className="management">
             <button ref="next" className="next" onClick={this.props.next}>Next</button>
+            <br/>
+            <button ref="reset" className="reset" onClick={this.props.reset}>Reset</button>
           </div>
         </div>);
   }
